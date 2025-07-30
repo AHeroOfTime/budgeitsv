@@ -9,12 +9,12 @@
 	<div class="grid grid-cols-2 gap-2 px-3 pb-5">
 		<!-- Item label + input -->
 		<div class="flex flex-col">
-			<label class="mb-1 text-sm font-bold text-gray-700" for="item">Item(s)</label>
+			<label class="mb-1 text-sm font-bold text-gray-700" for="item">Expense</label>
 			<input
-				id="item"
+				id="expense"
 				class="w-full rounded-lg border border-gray-300 p-2 shadow-sm focus:ring-2 focus:ring-green-600 focus:outline-none invalid:focus:ring-red-500"
 				type="text"
-				placeholder="Add item"
+				placeholder="Add expense"
 			/>
 		</div>
 

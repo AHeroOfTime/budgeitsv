@@ -3,7 +3,9 @@
 	import Spending from '../components/Spending.svelte';
 	import Footer from '../components/Footer.svelte';
 
-	let income = $state(50);
+	let income = $state();
+	let totalSpending = $state(0);
+	let disposableIncome = $state(0);
 </script>
 
 <div class="mx-auto grid max-w-4xl">
