@@ -1,5 +1,18 @@
-<script>
+<script lang="ts">
+	import { derived } from 'svelte/store';
+
 	let { spendingType } = $props();
+	let totalAmount = $derived(0);
+	let expenses = $state([
+		{
+			title: '',
+			cost: 0
+		}
+	]);
+
+	const addExpense = () => {
+		console.log(expenses[0].cost);
+	};
 </script>
 
 <div class="mt-5 rounded-md border border-gray-300 shadow">
@@ -32,8 +45,23 @@
 			</div>
 		</div>
 
-		<button class="col-span-2 mt-2 rounded-lg bg-green-600 p-2 text-white hover:bg-green-700"
+		<button
+			onclick={() => addExpense()}
+			class="col-span-2 mt-2 rounded-lg bg-green-600 p-2 text-white hover:bg-green-700"
 			>Submit</button
 		>
+
+		<!-- Expense List -->
+		<ul>
+			<!-- {#each expenses as expense}
+				<li>
+					<strong>{expense.title}</strong>
+					${expense.cost}
+				</li>
+			{/each} -->
+		</ul>
+		<div>
+			Total {spendingType} Spending: ${totalAmount}
+		</div>
 	</div>
 </div>

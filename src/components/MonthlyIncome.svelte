@@ -1,5 +1,12 @@
 <script>
-	let { income } = $props();
+	let { onUpdate } = $props();
+	let incomeValue = $state();
+
+	const updateIncome = () => {
+		onUpdate(incomeValue);
+		// clear input
+		incomeValue = '';
+	};
 </script>
 
 <div class="mt-5 rounded-md border border-gray-300 shadow">
@@ -13,11 +20,12 @@
 				class="focus:ring-opacity-100 w-full rounded-r-lg border-0 p-2 focus:ring-2 focus:ring-green-600 focus:outline-none invalid:focus:ring-red-500"
 				type="number"
 				placeholder="Monthly Income"
-				bind:value={income}
+				bind:value={incomeValue}
 			/>
 		</div>
-		<button class="grid-cols-1 rounded-lg bg-green-600 p-2 text-white hover:bg-green-700"
-			>Submit</button
+		<button
+			onclick={updateIncome}
+			class="grid-cols-1 rounded-lg bg-green-600 p-2 text-white hover:bg-green-700">Submit</button
 		>
 	</div>
 </div>
